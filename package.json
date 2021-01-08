@@ -1,0 +1,27 @@
+{
+  "name": "db4-project",
+  "version": "1.0.0",
+  "description": "Node DB Project for school",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.15",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leachtucker/node-db4-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leachtucker/node-db4-project/issues"
+  },
+  "homepage": "https://github.com/leachtucker/node-db4-project#readme"
+}
