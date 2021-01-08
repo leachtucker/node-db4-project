@@ -11,17 +11,22 @@ exports.up = function(knex) {
         })
         .createTable('recipe_ingredients', table => {
             table.integer('recipe_id')
+                .notNullable()
                 .references('id')
                 .inTable('recipes')
-                .notNullable();
+                .onDelete('CASCADE')
+                .onUpdate('CASCADE');
 
             table.integer('ingredient_id')
+                .notNullable()
                 .references('id')
                 .inTable('ingredients')
-                .notNullable();
+                .onDelete('CASCADE')
+                .onUpdate('CASCADE');
 
             table.float('ingredient_quantity').notNullable();
-        });
+        })
+        .raw('PRAGMA foreign_keys = ON'); // MUST use this rule for SQL to enforce onDelete and onUpdate rules.
 };
 
 exports.down = function(knex) {

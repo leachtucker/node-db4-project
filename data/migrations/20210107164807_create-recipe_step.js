@@ -6,9 +6,11 @@ exports.up = function(knex) {
             table.integer('step_number').notNullable();
             table.text('instructions', 128).notNullable();
             table.integer('recipe_id')
+                .notNullable()
                 .references('id')
                 .inTable('recipes')
-                .notNullable();
+                .onDelete('CASCADE')
+                .onUpdate('CASCADE');
         });
 };
 
